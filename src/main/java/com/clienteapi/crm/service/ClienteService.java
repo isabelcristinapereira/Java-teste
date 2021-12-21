@@ -15,7 +15,13 @@ public class ClienteService {
 	@Autowired
 	private ClienteRepository clienteRepository;
 
-	public Optional<Cliente> buscarClientePeloId(Long id) {
+	/**
+	* Método ultilizado para buscar cliente por Id pela classe ClienteRepository
+	* @since 1.0
+	* @author Isabel Cristina
+	*
+	*/
+	public Optional<Object> buscarClientePeloId(Long id) {
 
 		Optional<Cliente> clienteSalvo = clienteRepository.findById(id);
 
@@ -26,7 +32,13 @@ public class ClienteService {
 
 		return Optional.ofNullable(clienteSalvo.get()); 
 	}
- 
+	
+	/**
+	* Método ultilizado para salvar cliente na base de dados
+	* @since 1.0
+	* @author Isabel Cristina
+	*
+	*/
 	public Optional<Object> salvarCliente(Cliente novoCliente) {
 		Optional<Cliente> cliente = clienteRepository.findByNome(novoCliente.getNome());
 		if (cliente.isPresent()) {
@@ -37,6 +49,12 @@ public class ClienteService {
 		}
 	}
   
+	/**
+	* Método ultilizado para buscar todos os clientes na base de dados
+	* @since 1.0
+	* @author Isabel Cristina
+	*
+	*/
 	public List<Cliente> listarTodosOsClientes(){
 		return clienteRepository.findAll();
 		

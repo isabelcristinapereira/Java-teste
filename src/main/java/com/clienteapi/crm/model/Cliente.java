@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 /**
 * Classe Cliente utilizada como entidade para registrar usuarios no Banco de dados. mapeamento no banco de dados
 * @since 1.0
@@ -29,9 +31,10 @@ public class Cliente {
 	@NotBlank /** trabalha na camada da model, ele faz a validação aqui na model, verifica erro aqui na model*/
 	private String nome;
 	
-	private String telefone;
 	
+	private String telefone; 
 	
+	@JsonFormat(pattern ="yyyy-MM-dd") //garante quqe vai entrar no banco de dados esse formato de data
 	 private LocalDate dataNascimento;
 
 
