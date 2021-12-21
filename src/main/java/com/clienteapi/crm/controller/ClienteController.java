@@ -32,13 +32,13 @@ public class ClienteController {
 	*
 	*/
 	@GetMapping("/{id_cliente}") 
-	public ResponseEntity<Object>buscarClientePeloId (@PathVariable(value="id_cliente")Long id) { //object que vai ter masi de um itpo de retorno
+	public ResponseEntity<Object>buscarClientePeloId (@PathVariable(value="id_cliente")Long id) { 
 		Optional<Object> clienteEncontrado = clienteService.buscarClientePeloId(id); //tenta encontrar o cliente pelo parametro passado pela url, quando passamos pelo postmam vamos pela url para pesquisar o cliente,vai pegar o numero do id e transofmrar em um atributo numerico dentro do java
 		if(clienteEncontrado.isEmpty()) {   //faz a pesquisa pelo service e se tiver vai gravar no option e se nao tiver ele vai estar vazio e quando tiver vazio traz o status 204
-			return ResponseEntity.status(204).build(); //vazio 
+			return ResponseEntity.status(204).build(); 
 			
 		} else {
-			return ResponseEntity.status(200).body(clienteEncontrado); //se  tiver traz o status 200 e o cliente encontrado no corpo de resposta
+			return ResponseEntity.status(200).body(clienteEncontrado); 
 		}
 		
 		
