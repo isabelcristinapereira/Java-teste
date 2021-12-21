@@ -14,12 +14,13 @@ Montar um serviço back-end, do tipo API REST, com um CRUD básico e com persist
 * Java 11
 * Banco de Dados Relacional MySQL 8.0
 * Spring Framework
-* Dependencias Spring
+### Dependencias Spring
 - Spring Web
 - Spring Boot DevTools 
 - Spring Data JPA
 - MySQL Driver
 - Validation 
+- JUnit
 
 </p>
 
